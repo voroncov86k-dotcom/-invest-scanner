@@ -1,1 +1,50 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Invest Scanner</title><link rel="stylesheet" href="style.css"></head><body><main><header><div><small>INVEST SCANNER</small><h1>Мой портфель</h1></div><b>ТОЛЬКО АНАЛИЗ</b></header><section class="summary"><div><span>Портфель</span><strong>185 925 ₽</strong></div><div><span>Свободно</span><strong>5 000 ₽</strong></div><div><span>Результат</span><strong class="red">−86 642 ₽</strong></div></section><section class="card"><small>ЧТО ДЕЛАТЬ СЕГОДНЯ</small><em>ПОКУПКА</em><h2>Сбербанк</h2><div class="levels"><div>Вход<strong>274–275 ₽</strong></div><div>Стоп<strong>271,5 ₽</strong></div><div>Цель<strong>280–283 ₽</strong></div></div><p>Демо-данные. T‑Invest API подключим следующим этапом.</p></section><section class="card"><small>ПОЗИЦИИ</small><div id="portfolio"></div></section></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invest Scanner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <small>INVEST SCANNER</small>
+    <h1>Мой портфель</h1>
+  </div>
+  <b>АНАЛИЗ</b>
+</header>
+
+<section class="summary">
+  <div><span>Портфель</span><strong id="portfolioValue">—</strong></div>
+  <div><span>Свободно</span><strong id="cashValue">5 000 ₽</strong></div>
+  <div><span>Результат</span><strong id="resultValue">—</strong></div>
+</section>
+
+<section class="card">
+  <div class="todayHead">
+    <small>ЧТО ДЕЛАТЬ СЕГОДНЯ</small>
+    <em id="todaySignal">АНАЛИЗ</em>
+  </div>
+  <h2 id="todayName">Сбербанк</h2>
+  <div class="levels">
+    <div>Цена<strong id="todayPrice">—</strong></div>
+    <div>Стоп<strong id="todayStop">—</strong></div>
+    <div>Цель<strong id="todayTarget">—</strong></div>
+  </div>
+  <p id="updated">Загрузка котировок MOEX…</p>
+  <button id="refresh" type="button">Обновить цены</button>
+</section>
+
+<section class="card">
+  <div class="positionsHead">
+    <small>ПОЗИЦИИ</small>
+    <span id="status">Загрузка…</span>
+  </div>
+  <div id="portfolio"></div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
